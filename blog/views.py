@@ -28,3 +28,8 @@ class CategoryView(generic.ListView):
         queryset = Post.objects.order_by('-created_at').filter(category=category)
 
         return queryset
+
+class DetailView(generic.DetailView):
+    template_name = 'blog/post_detail.html'
+    model = Post
+
